@@ -6,19 +6,14 @@ basic.showLeds(`
     . . . . .
     . . . . .
     `)
-for (let index = 0; index < 4; index++) {
-    maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
-    maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
-    basic.pause(200)
-}
+maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
+maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
 basic.pause(100)
-for (let index = 0; index < 4; index++) {
-    maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
-    basic.pause(100)
-}
+maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
+basic.pause(100)
 maqueen.MotorRun(maqueen.aMotors.M1, maqueen.Dir.CCW, 250)
 maqueen.MotorRun(maqueen.aMotors.M2, maqueen.Dir.CW, 250)
-basic.pause(5000)
+basic.pause(100)
 basic.forever(function () {
     for (let index = 0; index < 100000000; index++) {
         maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
