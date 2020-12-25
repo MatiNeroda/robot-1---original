@@ -9,9 +9,19 @@ basic.showLeds(`
 maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
 maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
 basic.pause(5000)
-maqueen.MotorRun(maqueen.aMotors.M1, maqueen.Dir.CCW, 100)
-maqueen.MotorRun(maqueen.aMotors.M2, maqueen.Dir.CW, 100)
+for (let index = 0; index < 4; index++) {
+    maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
+    basic.pause(100)
+}
+maqueen.MotorRun(maqueen.aMotors.M1, maqueen.Dir.CCW, 250)
+maqueen.MotorRun(maqueen.aMotors.M2, maqueen.Dir.CW, 250)
+basic.pause(5000)
 basic.forever(function () {
+    for (let index = 0; index < 100000000; index++) {
+        maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
+        maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
+        basic.pause(100)
+    }
     if (maqueen.sensor(PingUnit.Centimeters) < 35 && maqueen.sensor(PingUnit.Centimeters) != 0) {
         item = Math.randomBoolean()
         if (item == true) {
